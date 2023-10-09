@@ -27,7 +27,7 @@ public class TestJdbcCalls {
 
     @BeforeClass()
     public static void setUp() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
         spyConnection = spy(connection);
         PowerMockito.mockStatic(JdbcUtils.class);

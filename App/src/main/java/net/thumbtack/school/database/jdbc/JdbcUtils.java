@@ -13,7 +13,7 @@ public class JdbcUtils {
 
     public static boolean createConnection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
             return true;
         } catch (ClassNotFoundException | SQLException e) {

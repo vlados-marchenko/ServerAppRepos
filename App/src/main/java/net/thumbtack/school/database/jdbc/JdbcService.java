@@ -287,7 +287,7 @@ public class JdbcService {
 //    Добавляет Group в базу данных, устанавливая ее принадлежность к школе School.
 
     public static School getSchoolByIdWithGroups(int id) throws SQLException{
-        String selectQuery = "SELECT * FROM SCHOOL INNER JOIN `group` ON schoolId = school.id WHERE school.id = ?";
+        String selectQuery = "SELECT * FROM school INNER JOIN `group` ON schoolId = school.id WHERE school.id = ?";
         Connection connection = JdbcUtils.getConnection();
         boolean flag = true;
         School school = new School();

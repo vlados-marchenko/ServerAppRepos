@@ -5,6 +5,7 @@ import net.thumbtack.school.competition.dto.request.participant.RegisterParticip
 import net.thumbtack.school.competition.exception.ServiceException;
 import net.thumbtack.school.competition.server.Server;
 import net.thumbtack.school.competition.server.ServerResponse;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

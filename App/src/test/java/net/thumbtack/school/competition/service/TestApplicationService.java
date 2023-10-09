@@ -5,12 +5,12 @@ import net.thumbtack.school.competition.dto.request.application.AddApplicationDt
 import net.thumbtack.school.competition.exception.ServiceException;
 import net.thumbtack.school.competition.server.Server;
 import net.thumbtack.school.competition.server.ServerResponse;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 
 public class TestApplicationService {
     private final Gson gson = new Gson();
@@ -18,12 +18,11 @@ public class TestApplicationService {
 
 
     @Test
-    @Disabled
     public void testAddApplication() throws ServiceException {
         AddApplicationDtoRequest addApplicationDtoRequest = new AddApplicationDtoRequest("Dark Galaxy", " App Description",
                 List.of("Math", "Biology"), 350000);
         String jsonRequest = gson.toJson(addApplicationDtoRequest);
         ServerResponse response = server.addApplication(jsonRequest);
-        assertEquals(200, response.getResponseCode());
+        Assertions.assertEquals(200, response.getResponseCode());
     }
 }
